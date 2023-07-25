@@ -17,7 +17,13 @@ namespace DecoratorTemplate
             services.Replace(ServiceDescriptor.Scoped<ITerminalRestrictionUpdateRepository>(
                 x => new TerminalRestrictionUpdateRepositoryDecorator
                 (
-                    x.GetRequiredService<TerminalRestrictionUpdateRepository>()
+                    x.GetRequiredService<TerminalRestrictionUpdateRepository>()//,
+                    //x.GetRequiredService<ITerminalTimeslotVehicleRepository>(),
+                    //x.GetRequiredService<ITerminalTimeslotVehicleStatusService>(),
+                    //x.GetRequiredService<TerminalHelper>(),
+                    //x.GetRequiredService<IMapper>(),
+                    //x.GetRequiredService<ICalculateTerminalTimeslotVehicleStatusService>(),
+                    //x.GetRequiredService<ITerminalRestrictionReservationRepository>()
                 )));
 
             return services;
